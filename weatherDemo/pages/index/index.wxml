@@ -1,0 +1,11 @@
+<view class="container">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">正在定位...</button>
+  <picker mode="region">
+    {{myCity}}
+  </picker>
+  <text>19℃ 晴</text>
+  <image src="" mode="widthFix"></image>
+  <view class="detail">
+
+  </view>
+</view>
