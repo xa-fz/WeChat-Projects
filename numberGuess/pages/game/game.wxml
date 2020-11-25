@@ -1,0 +1,14 @@
+<view class="container">
+  <text>欢迎</text>
+  <form>
+    <block wx:if="{{isGameStart}}">
+      <input bindinput="getNumber" type="number" placeholder="请输入0~100之间的数字"></input>
+      <button bindtap="guess" type="primary" form-type="reset">提交</button>
+    </block>
+    <block wx:else>
+      <button type="primary" bindtap="reStartGuss">提交</button>
+    </block>
+    
+  </form>
+  <text id="tip">{{tip}}</text>
+</view>
