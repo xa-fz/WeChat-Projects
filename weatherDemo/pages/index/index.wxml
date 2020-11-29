@@ -1,6 +1,7 @@
 <view class="container">
   <picker mode="region" bindchange="regionChange">
     <view>{{region}}</view>
+    <view>当前位置：{{LongLat}}</view>
   </picker>
   <text>{{now.tmp}}℃ {{now.cond_txt}}</text>
   <image src="../../images/weatherImg/{{now.cond_code}}.png" mode="widthFix"></image>
