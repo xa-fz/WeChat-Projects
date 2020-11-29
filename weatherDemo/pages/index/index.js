@@ -1,5 +1,8 @@
 const app = getApp();
-
+// var QQMapWX = require('../../common/js/qqmap-wx-jssdk.js');
+// var qqmapsdk = new QQMapWX({
+//   key: '3JCBZ-K3E6O-7XPWY-STEUM-B52RQ-PJBJM'
+// });  
 Page({
 
   /**
@@ -10,6 +13,24 @@ Page({
     now: {},
     LongLat: ''
   },
+  queryCityInfo: function (latitude,longitude) {
+    qqmapsdk.reverseGeocoder({
+			location: {
+				latitude,
+				longitude
+			},
+			// location: e.detail.value.reverseGeo || '', //获取表单传入的位置坐标,不填默认当前位置,示例为string格式
+			success: function(res) {//成功后的回调
+				console.log(res);
+			},
+			fail: function (res) {
+			   console.log("获取地址失败", failres);
+			},
+			complete: function (completeres) {
+		
+			}
+		})
+  },
 getLocation: function () {
   wx.getLocation({
     type: 'wgs84',
@@ -19,6 +40,7 @@ getLocation: function () {
         longitude
       } = res
      console.log(latitude,longitude);
+    //  this.queryCityInfo(latitude,longitude);
      this.getWeather(`${longitude},${latitude}`);
      this.setData({
      'LongLat': `${longitude},${latitude}`
