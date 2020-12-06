@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "电子图书"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
